@@ -96,13 +96,6 @@ mailhogApp.controller('MailCtrl', function ($scope, $http, $sce, $timeout) {
     })
   }
 
-  $(function() {
-    $scope.openStream();
-    if(typeof(Notification) !== "undefined") {
-      Notification.requestPermission();
-    }
-  });
-
   $scope.getMoment = function(a) {
     return moment(a)
   }
@@ -604,4 +597,11 @@ mailhogApp.controller('MailCtrl', function ($scope, $http, $sce, $timeout) {
       e.done();
   	});
   }
+
+  $(function() {
+    $scope.openStream();
+    if(typeof(Notification) !== "undefined") {
+      Notification.requestPermission();
+    }
+  });
 });
